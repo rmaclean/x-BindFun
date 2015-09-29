@@ -8,13 +8,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button Tapped="{x:Bind Click}" Content="WORKING"/>
         <ListView ItemsSource="{x:Bind Names}">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:Customer"> 
-                    <Button Content="{x:Bind Path=Page.Name}"/>
+                    <Button Content="{x:Bind Title}"/>
+                    <!--<Button Tapped="{x:Bind Clicky}" Content="{x:Bind Title}"/>-->
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </Grid>
+    </StackPanel>
 </Page>
